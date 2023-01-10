@@ -20,16 +20,26 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+    return new Promise((resolve) => {
+        req.headers.cookie = ''
+        proxy.web(req, res, {
+            target: 'https://js-post-api.herokuapp.com',
+            changeOrigin: true,
+            selfHandleResponse: false
+        })
+        proxy.once('proxyReq', () => {
+            resolve(true)
+        })
+    })
 
-    req.headers.cookie = ''
 
     // console.log('req', req, res)
 
-    proxy.web(req, res, {
-        target: 'https://js-post-api.herokuapp.com',
-        changeOrigin: true,
-        selfHandleResponse: false
-    })
+    // proxy.web(req, res, {
+    //     target: 'https://js-post-api.herokuapp.com',
+    //     changeOrigin: true,
+    //     selfHandleResponse: false
+    // })
 
 //   res.status(200).json({ name: 'path' })
 }
