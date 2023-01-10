@@ -13,7 +13,7 @@ export default function PostPage ({posts}: PostPageProps) {
     //     console.log('runnnnnnnn')
     //     setNewPost([])
     // }, [])
-    console.log('posts', posts)
+    // console.log('posts', posts)
   return (
     <div>
         <h1>List posts</h1>
@@ -33,7 +33,7 @@ export default function PostPage ({posts}: PostPageProps) {
 
 
 export const getStaticProps: GetStaticProps<PostPageProps> = async (context : GetStaticPropsContext) => {
-    console.log('static props')
+    // console.log('static props')
     const res = await fetch('https://js-post-api.herokuapp.com/api/posts?_page=1').then((response) => response.json()) || []
     // console.log('res', res)
     return{
