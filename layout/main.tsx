@@ -9,11 +9,11 @@ export function MainLayout ({ children }: layoutProps) {
         <h1>Main Layout</h1>
 
         <Link href={'/'}>
-            <a> Home</a>
+            <p> Home</p>
         </Link>
 
         <Link href={'/about'}>
-            <a> About</a>
+            <p> pbout</p>
         </Link>
 
         <div>{children}</div>

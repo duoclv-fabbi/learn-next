@@ -10,11 +10,11 @@ export function AdminLayout ({ children }: layoutProps) {
         <div>Sidebar</div>
 
         <Link href={'/'}>
-            <a> Home</a>
+            <p> Home</p>
         </Link>
 
         <Link href={'/about'}>
-            <a> About</a>
+            <p> pbout</p>
         </Link>
 
         <div>{children}</div>
